@@ -1,4 +1,8 @@
 class WorshipsController < ApplicationController
+
+  before_action :set_worship, only: [:edit, :show]
+
+
   def index
     @worships = Worship.all
   end
@@ -17,7 +21,6 @@ class WorshipsController < ApplicationController
   end
 
   def edit
-    @worship = Worship.find(params[:id])
   end
 
   def update
@@ -25,8 +28,16 @@ class WorshipsController < ApplicationController
     worship.update(worship_params)
   end
 
+  def show
+  end
+
+
   private
   def worship_params
     params.require(:worship).permit(:name, :image, :text)
+  end
+
+  def set_worship
+    @worship = Worship.find(params[:id])
   end
 end

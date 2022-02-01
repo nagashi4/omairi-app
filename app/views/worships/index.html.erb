@@ -4,6 +4,9 @@
     <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
+        <li>
+            <%= link_to '詳細', worship_path(worship.id), method: :get %>
+          </li>
           <li>
             <%= link_to '編集', edit_worship_path(worship.id), method: :get %>
           </li>
