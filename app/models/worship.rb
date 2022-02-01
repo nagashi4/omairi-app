@@ -1,2 +1,3 @@
 class Worship < ApplicationRecord
+  
 end

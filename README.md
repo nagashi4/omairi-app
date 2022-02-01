@@ -19,7 +19,7 @@
 | ------ | ------ | -----------                   |
 | user   | integer| null: false, foreign_key: true|
 | text   | string | null: false                   |
-
+| image  | text   | null: false                    |
 
 
 ### Association
