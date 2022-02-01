@@ -17,7 +17,7 @@
 
 | Column | Type   | Options                       |
 | ------ | ------ | -----------                   |
-| user| integer| null: false, foreign_key: true|
+| user   | integer| null: false, foreign_key: true|
 | text   | string | null: false                   |
 
 
