@@ -1,7 +1,7 @@
 class WorshipsController < ApplicationController
 
   before_action :set_worship, only: [:edit, :show]
-
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @worships = Worship.all
@@ -39,5 +39,11 @@ class WorshipsController < ApplicationController
 
   def set_worship
     @worship = Worship.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
