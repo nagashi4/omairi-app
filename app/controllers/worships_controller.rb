@@ -34,7 +34,7 @@ class WorshipsController < ApplicationController
 
   private
   def worship_params
-    params.require(:worship).permit(:name, :image, :text)
+    params.require(:worship).permit(:name, :image, :text).merge(user_id: current_user.id)
   end
 
   def set_worship
