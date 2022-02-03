@@ -3,4 +3,12 @@ class Worship < ApplicationRecord
 
   belongs_to :user
   has_many :comments 
+
+  def self.search(search)
+    if search != ""
+      Worship.where('text LIKE(?)', "%#{search}%")
+    else
+      Worship.all
+    end
+  end
 end

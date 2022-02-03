@@ -1,7 +1,7 @@
 class WorshipsController < ApplicationController
 
   before_action :set_worship, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @worships = Worship.includes(:user).order("created_at DESC")
@@ -32,7 +32,9 @@ class WorshipsController < ApplicationController
     @comment = Comment.new
     @comments = @worship.comments.includes(:user)
   end
-
+  def search
+    @worships = Worship.search(params[:keyword])
+  end
 
   private
   def worship_params
