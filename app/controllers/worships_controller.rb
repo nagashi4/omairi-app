@@ -4,7 +4,7 @@ class WorshipsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @worships = Worship.all
+    @worships = Worship.includes(:user)
   end
 
   def new
@@ -34,7 +34,7 @@ class WorshipsController < ApplicationController
 
   private
   def worship_params
-    params.require(:worship).permit(:name, :image, :text).merge(user_id: current_user.id)
+    params.require(:worship).permit(:image, :text).merge(user_id: current_user.id)
   end
 
   def set_worship

@@ -17,7 +17,9 @@
       </div>
       <p><%= worship.text %></p>
       <span class="name">
-        <%= worship.name %>
+         <a href="/users/<%= worship.user.id %>">
+          <span>投稿者</span><%= worship.user.name %>
+        </a>
       </span>
     </div>
   <% end %>
