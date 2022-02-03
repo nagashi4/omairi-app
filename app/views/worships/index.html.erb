@@ -7,12 +7,14 @@
         <li>
             <%= link_to '詳細', worship_path(worship.id), method: :get %>
           </li>
+          <% if user_signed_in? && current_user.id == worship.user_id %>
           <li>
             <%= link_to '編集', edit_worship_path(worship.id), method: :get %>
           </li>
           <li>
               <%= link_to '削除', worship_path(worship.id), method: :delete %>
           </li>
+           <% end %>
         </ul>
       </div>
       <p><%= worship.text %></p>
