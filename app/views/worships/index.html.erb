@@ -1,28 +1,5 @@
 <div class="contents row">
   <% @worships.each do |worship| %>
-    <div class="content_post" style="background-image: url(<%= worship.image %>);">
-    <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-        <li>
-            <%= link_to '詳細', worship_path(worship.id), method: :get %>
-          </li>
-          <% if user_signed_in? && current_user.id == worship.user_id %>
-          <li>
-            <%= link_to '編集', edit_worship_path(worship.id), method: :get %>
-          </li>
-          <li>
-              <%= link_to '削除', worship_path(worship.id), method: :delete %>
-          </li>
-           <% end %>
-        </ul>
-      </div>
-      <p><%= worship.text %></p>
-      <span class="name">
-         <a href="/users/<%= worship.user.id %>">
-          <span>投稿者</span><%= worship.user.name %>
-        </a>
-      </span>
-    </div>
+    <%= render partial: "worship", locals: { worship: worship } %>
   <% end %>
 </div>
