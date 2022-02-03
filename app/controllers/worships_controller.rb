@@ -29,6 +29,8 @@ class WorshipsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @worship.comments.includes(:user)
   end
 
 
