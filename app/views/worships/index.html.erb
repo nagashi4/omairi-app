@@ -1,10 +1,34 @@
-<%= form_with(url: search_worships_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
 
+<body>
+    <input id="omikuji_btn" type="button" value="おみくじを引く">
+    <script>
+        document.getElementById("omikuji_btn").onclick = function() {
+               var rnd = Math.floor( Math.random() * 6 );
+            var omikuji;
+            if (rnd === 0) omikuji = "大吉";
+            if (rnd === 1) omikuji = "吉";
+            if (rnd === 2) omikuji = "中吉";
+            if (rnd === 3) omikuji = "小吉";
+            if (rnd === 4) omikuji = "末吉";
+            if (rnd === 5) omikuji = "凶";
+            alert(omikuji);
+            
+        }
+    </script>
+</body>
+
+
+
+<%= month_calendar do |date| %>
+          <%= date %>
+          <% end %>
 <div class="contents row">
   <% @worships.each do |worship| %>
     <%= render partial: "worship", locals: { worship: worship } %>
   <% end %>
 </div>
+
+<%= form_with(url: search_worships_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
