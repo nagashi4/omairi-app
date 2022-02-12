@@ -26,9 +26,11 @@
   <% @worships.each do |worship| %>
     <%= render partial: "worship", locals: { worship: worship } %>
   <% end %>
+  
 </div>
 
 <%= form_with(url: search_worships_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
+  
 <% end %>
