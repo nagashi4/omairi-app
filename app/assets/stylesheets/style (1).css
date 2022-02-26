@@ -43,6 +43,7 @@ audio:not([controls]) {
 [hidden],
 template {
   display: none;
+  
 }
 
 /* ==========================================================================
@@ -59,12 +60,15 @@ html {
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+  background:linear-gradient(to right, blue 0%, red 100%);
 }
 
 /*
  * Remove default margin. */
 body {
   margin: 0;
+  
+  
 }
 
 /* ==========================================================================
@@ -738,7 +742,8 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
-  background-color: #fff;
+  background-color: darkseagreen;
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -752,7 +757,7 @@ header.header div.header__bar.row {
 }
 
 header.header div.header__bar.row h1.grid-6 {
-  font-size: 20px;
+  font-size: 40px;
   line-height: 41px;
   float: left;
 }
@@ -833,6 +838,7 @@ header.header .user_nav ul li a {
   top: 30%;
   bottom: 0;
   right: 0;
+   
 }
 
 .form footer {
@@ -846,6 +852,8 @@ div.contents.row h2 {
   margin: 20px 0;
   padding: 0;
   font-weight: normal;
+  
+
 }
 
 div.contents.row h2 strong {
@@ -856,6 +864,7 @@ div.contents.row h2 strong {
 
 div.contents.row .new_user {
   font-family: "游ゴシック", "YuGothic";
+
 }
 
 div.contents.row div.content_post {
@@ -863,11 +872,14 @@ div.contents.row div.content_post {
   padding: 30px;
   position: relative;
   height: 400px;
+  width: 300px;
   color: #fff;
   background-size: cover;
   background-position: center center;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  display: inline-block;
+  
 }
 
 div.contents.row div.content_post:after {
